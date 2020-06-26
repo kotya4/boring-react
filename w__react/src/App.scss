@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$color-base: #21a5da;
+$color-dark: #1c9dd1;
+$color-light: #3eb1df;
+
+body {
+  /* Defauts. */
+  font-family: "Lucida Console", Monaco, monospace;
+  background-color: #111;
+  font-size: 11px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.weather {
+
+ .container {
+    font-family: 'Montserrat', sans-serif;
+    background: $color-base;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .hat {
+    background: $color-light;
+    height: 8%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .big-icon {
+      height: 20vmax;
+      width: 20vmax;
+      margin-top: 1vmax;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .temperature {
+      position: relative;
+      left: 3vmax;
+    }
+  }
+
+  .circle {
+    background: $color-base;
+    border-radius: 50%;
+    position: absolute;
+    &._0 { height: 20vmax; width: 20vmax; filter: brightness(105%); }
+    &._1 { height: 17vmax; width: 17vmax; filter: brightness(110%); }
+    &._2 { height: 14vmax; width: 14vmax; filter: brightness(115%); }
+    &._3 { height: 11vmax; width: 11vmax; filter: brightness(120%); }
+  }
+
+  .big-icon {
+    .icon { height: 10%; width: 10%; }
+  }
+
+  .foot {
+    background: $color-light;
+    height: 10%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .button {
+    background: $color-light;
+    height: 100%;
+    width: 33.33%;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &.active {
+      background: $color-dark;
+      pointer-events: none;
+    }
+
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &.desc {
+      position: relative;
+      top: -14px;
+    }
+  }
+
+  .icon {
+    background: url("svg/rain.svg") no-repeat center center; /* Default icon. */
+    height: 80%;
+    width: 80%;
+    &.rain { background: url("svg/rain.svg") no-repeat center center; }
+    &.clear { background: url("svg/clear.svg") no-repeat center center; }
+    &.clouds { background: url("svg/clouds.svg") no-repeat center center; }
+  }
+
+  .text {
+    text-align: center;
+    &.extra-large {
+      font-size: 116px;
+      font-size: 12vmax;
+    }
+    &.large {
+      font-size: 24px;
+      font-size: 3vmax;
+    }
+    &.medium {
+      font-size: 20px;
+      font-size: 2vmax;
+    }
+    &.small {
+      font-size: 12px;
+      font-size: 1.5vmax;
+    }
+    &.extra-small {
+      font-size: 10px;
+      font-size: 1.2vmax;
+    }
+  }
+}
+
+/* Animations */
+
+.slide-right-from-center {
+  animation: 0.5s slide-right-from-center forwards;
+}
+
+@keyframes slide-right-from-center {
+  from { transform: translateX(   0%); }
+  to   { transform: translateX(+500%); }
+}
+
+.slide-right-from {
+  animation: 0.5s slide-right-from forwards;
+}
+
+@keyframes slide-right-from {
+  from { transform: translateX(-500%); }
+  to   { transform: translateX(   0%); }
+}
+
+.slide-left-from-center {
+  animation: 0.5s slide-left-from-center forwards;
+}
+
+@keyframes slide-left-from-center {
+  from { transform: translateX(   0%); }
+  to   { transform: translateX(-500%); }
+}
+
+.slide-left-from {
+  animation: 0.5s slide-left-from forwards;
+}
+
+@keyframes slide-left-from {
+  from { transform: translateX(+500%); }
+  to   { transform: translateX(   0%); }
+}
+
