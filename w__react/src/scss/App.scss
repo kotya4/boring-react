@@ -1,37 +1,25 @@
+// TODO: Не стал разъединять правила для разных компонентов по разным файлам, но было бы здорово.
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 $color-base: #21a5da;
 $color-dark: #1c9dd1;
 $color-light: #3eb1df;
 
-body {
-  /* Defauts. */
-  font-family: "Lucida Console", Monaco, monospace;
-  background-color: #111;
-  font-size: 11px;
+.weather {
+  overflow: hidden;
   color: white;
-  padding: 0;
-  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: $color-base;
+  position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.weather {
-
- .container {
-    font-family: 'Montserrat', sans-serif;
-    background: $color-base;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    overflow: hidden;
-  }
+  left: 0;
+  top: 0;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 
   .hat {
     background: $color-light;
@@ -74,7 +62,8 @@ body {
   }
 
   .big-icon {
-    .icon { height: 10%; width: 10%; }
+    transform: translateX(0%); // HACK: без этого при инициализации размер иконки слишком большой.
+    .icon { width: 40%; margin-top: 1vmax; }
   }
 
   .foot {
@@ -112,12 +101,12 @@ body {
   }
 
   .icon {
-    background: url("svg/rain.svg") no-repeat center center; /* Default icon. */
+    background: url("../svg/rain.svg") no-repeat center center; /* Default icon. */
     height: 80%;
     width: 80%;
-    &.rain { background: url("svg/rain.svg") no-repeat center center; }
-    &.clear { background: url("svg/clear.svg") no-repeat center center; }
-    &.clouds { background: url("svg/clouds.svg") no-repeat center center; }
+    &.rain { background: url("../svg/rain.svg") no-repeat center center; }
+    &.clear { background: url("../svg/clear.svg") no-repeat center center; }
+    &.clouds { background: url("../svg/clouds.svg") no-repeat center center; }
   }
 
   .text {

@@ -1,18 +1,12 @@
+//
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import { Weather } from './weather.js';
+import { App } from './components/App';
 
-async function main() {
+import './scss/index.scss';
 
-  await Weather.init();
-
-  ReactDOM.render(
-    <App  weather={Weather} />,
-    document.getElementById('root')
-  );
-
-}
-
-main();
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
